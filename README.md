@@ -5,7 +5,7 @@ I used the same data in order to test the accuracy of each model.
 You can run it using jupyter notebook (by creating a new python3 file.
 You can find documentation about the models I used easily.
 
-DecisionTreeClassifier documentation : https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
-SVC documentation : https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
-Perceptron documentation : https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html
-KNeighbors documentation : https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
+DecisionTreeClassifier documentation : https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html \newline
+SVC documentation : https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html \newline
+Perceptron documentation : https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html \newline
+KNeighbors documentation : https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html \newline
