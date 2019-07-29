@@ -1,0 +1,45 @@
+import numpy as np
+from sklearn import tree
+from sklearn.svm import SVC
+from sklearn.linear_model import Perceptron
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+
+x = [[190, 90, 56], [170, 60, 23], [181, 80, 44], [177, 70, 43], [160, 60, 38], [154, 54, 37], [166, 65, 40], [190, 90, 47], [175, 64, 39],[177, 70, 40], [159, 55, 37], [171, 75, 42], [181, 85, 43]]
+y = ['male','female','male', 'male', 'female', 'female', 'male', 'male', 'female', 'female', 'female', 'male', 'male']
+
+clf_tree = tree.DecisionTreeClassifier() 
+clf_SVC=SVC(gamma="auto")
+clf_Perceptron=Perceptron(tol=1e-3, random_state=0)
+clf_KNeighbors=KNeighborsClassifier(n_neighbors=3)
+
+#Training
+clf_tree = clf_tree.fit(x,y) 
+clf_SVC = clf_SVC.fit(x,y)
+clf_Perceptron =clf_Perceptron.fit(x,y) 
+clf_KNeighbors=clf_KNeighbors.fit(x,y)
+
+#Testing using the same data
+pred_tree = clf_tree.predict(x)
+pred_SVC = clf_SVC.predict(x)
+pred_Perceptron = clf_Perceptron.predict(x)
+pred_KNeighbors = clf_KNeighbors.predict(x)
+
+#Accuracy for each Model
+acc_tree=accuracy_score(y,pred_tree)*100
+acc_SVC=accuracy_score(y,pred_SVC)*100
+acc_Perceptron=accuracy_score(y,pred_Perceptron)*100
+acc_KNeighbors=accuracy_score(y,pred_KNeighbors)*100
+
+
+print (pred_tree,"\n",pred_SVC,"\n",pred_Perceptron,"\n",pred_KNeighbors)
+print("Accuracy from DecisionTreeClassifier : {}". format(acc_tree))
+print("Accuracy from SVC : {}".format(acc_SVC))
+print("Accuracy from Perceptron : {}". format(acc_Perceptron))
+print("Accuracy from KNeighbors : {}".format(acc_KNeighbors))
+
+#choose the best classifier
+values=np.array([acc_tree,acc_SVC,acc_Perceptron,acc_KNeighbors])
+names=np.array(['DecisionTreeClassifier', 'SVC', 'Perceptron', 'Kneighbors'])
+Indx=np.argmax(values)
+print("Best classifier : {}".format(names[Indx]))
